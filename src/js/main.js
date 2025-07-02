@@ -44,27 +44,16 @@ function initSmoothScroll() {
 function initShareFunction() {
     const shareBtn = document.getElementById('shareBtn');
     const shareMessages = [
-        "茅台是A股价值投资的信仰，$600519是币圈价值投资的信仰！关注茅台官方 @maotai600519",
-        "这不就是你幻想中完美的币吗？万年长牛，永不回调！$600519 🚀",
-        "A sip of tradition, a shot of speculation. $600519 让年轻人也能买得起茅台！关注 @maotai600519",
-        "这才是币股融合的币！$600519 带你穿越牛熊！茅台官方 @maotai600519",
-        "茅台股票万年长牛，$600519币万年暴涨！关注茅台官方 @maotai600519",
-        "中产幻想：喝茅台、买茅台、炒茅台。Web3幻想：买$600519！关注 @maotai600519"
+        `A sip of tradition, a shot of speculation. $600519 让年轻人也能买得起茅台！\n关注 @maotai600519\n#MOUTAI #茅台 #Web3 #Meme \nmaotai.app`
     ];
     
     shareBtn.addEventListener('click', function() {
-        // 随机选择一条消息
         const randomMessage = shareMessages[Math.floor(Math.random() * shareMessages.length)];
+        const tweetText = encodeURIComponent(randomMessage);
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
         
-        // 构建Twitter分享链接
-        const tweetText = encodeURIComponent(randomMessage + ' #MOUTAI #茅台 #Web3 #Meme');
-        const tweetUrl = encodeURIComponent(window.location.href);
-        const twitterUrl = `https://twitter.com/intent/tweet?text=${tweetText}&url=${tweetUrl}`;
-        
-        // 打开Twitter分享页面
         window.open(twitterUrl, '_blank', 'width=600,height=400');
         
-        // 添加点击效果
         this.style.transform = 'scale(0.95)';
         setTimeout(() => {
             this.style.transform = 'scale(1)';
