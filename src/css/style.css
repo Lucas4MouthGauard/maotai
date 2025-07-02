@@ -1,0 +1,584 @@
+/* 像素风格茅台Meme网站样式 */
+
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', monospace;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 像素边框效果 */
+.pixel-border {
+    border: 2px solid #ffffff;
+    box-shadow: 
+        0 0 0 2px #000000,
+        0 0 0 4px #ffffff,
+        0 0 0 6px #000000;
+}
+
+/* 导航栏 */
+.pixel-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 3px solid #ffffff;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    border-color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+    color: #ffd700;
+}
+
+/* 首页部分 */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 2rem;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 0, 0, 0.1) 0%, transparent 50%);
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    z-index: 2;
+}
+
+/* 像素风格茅台瓶 */
+.pixel-bottle {
+    position: relative;
+    width: 120px;
+    height: 200px;
+    margin: 0 auto 2rem;
+    transform: scale(1.5);
+}
+
+.bottle-body {
+    width: 80px;
+    height: 140px;
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    border: 3px solid #000000;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bottle-neck {
+    width: 20px;
+    height: 40px;
+    background: #ffd700;
+    border: 3px solid #000000;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bottle-cap {
+    width: 30px;
+    height: 15px;
+    background: #8b4513;
+    border: 3px solid #000000;
+    border-radius: 5px;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pixel-title {
+    font-size: 3rem;
+    color: #ffd700;
+    text-shadow: 
+        3px 3px 0px #000000,
+        6px 6px 0px #8b0000;
+    margin-bottom: 1rem;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 
+            3px 3px 0px #000000,
+            6px 6px 0px #8b0000;
+    }
+    to {
+        text-shadow: 
+            3px 3px 0px #000000,
+            6px 6px 0px #8b0000,
+            0 0 20px #ffd700;
+    }
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #ff6b6b;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.hero-description {
+    margin-bottom: 2rem;
+}
+
+.hero-description p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+/* 社交媒体链接 */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.social-link.twitter {
+    color: #1da1f2;
+    border-color: #1da1f2;
+}
+
+.social-link.stock {
+    color: #00ff00;
+    border-color: #00ff00;
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.social-link.twitter:hover {
+    background: rgba(29, 161, 242, 0.2);
+}
+
+.social-link.stock:hover {
+    background: rgba(0, 255, 0, 0.2);
+}
+
+/* 按钮样式 */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pixel-btn {
+    padding: 1rem 2rem;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.8rem;
+    border: 3px solid #000000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.pixel-btn.primary {
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    color: #000000;
+}
+
+.pixel-btn.secondary {
+    background: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.pixel-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.pixel-btn.primary:hover {
+    background: linear-gradient(45deg, #ffed4e, #ffd700);
+}
+
+.pixel-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 浮动金币 */
+.floating-coins {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.coin {
+    position: absolute;
+    font-size: 2rem;
+    color: #ffd700;
+    animation: float 6s ease-in-out infinite;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+.coin:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.coin:nth-child(2) { top: 60%; left: 80%; animation-delay: 1s; }
+.coin:nth-child(3) { top: 80%; left: 20%; animation-delay: 2s; }
+.coin:nth-child(4) { top: 30%; left: 70%; animation-delay: 3s; }
+.coin:nth-child(5) { top: 70%; left: 30%; animation-delay: 4s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* 行情图部分 */
+.chart-section {
+    padding: 5rem 2rem;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.chart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #ffd700;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+.chart-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.chart-symbol {
+    font-size: 1.2rem;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.chart-price {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.price-change.positive {
+    color: #00ff00;
+    font-size: 1rem;
+}
+
+.pixel-chart {
+    background: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.chart-messages {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.message {
+    font-size: 1rem;
+    color: #ff6b6b;
+    margin-bottom: 0.5rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* 官方信息 */
+.official-info {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(255, 215, 0, 0.1);
+    border: 2px solid #ffd700;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.official-info p {
+    font-size: 0.8rem;
+    color: #ffd700;
+}
+
+.official-info a {
+    color: #1da1f2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.official-info a:hover {
+    text-decoration: underline;
+}
+
+/* 分享部分 */
+.share-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+}
+
+.share-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.share-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.share-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.share-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: #ffd700;
+}
+
+.card-header {
+    font-size: 1.2rem;
+    color: #ffd700;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #ffffff;
+    line-height: 1.8;
+}
+
+/* 分享按钮组 */
+.share-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    font-size: 1rem;
+    padding: 1.5rem 3rem;
+}
+
+.official-btn {
+    font-size: 1rem;
+    padding: 1.5rem 3rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* 免责声明 */
+.disclaimer {
+    background: rgba(255, 0, 0, 0.1);
+    border: 2px solid #ff0000;
+    border-radius: 5px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.disclaimer p {
+    margin-bottom: 0.5rem;
+}
+
+.disclaimer a {
+    color: #1da1f2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.disclaimer a:hover {
+    text-decoration: underline;
+}
+
+/* 页脚 */
+.pixel-footer {
+    background: #000000;
+    border-top: 3px solid #ffffff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: #cccccc;
+}
+
+.footer-content a {
+    color: #1da1f2;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .pixel-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .chart-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .share-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .share-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pixel-chart canvas {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffd700;
+    border-radius: 6px;
+    border: 2px solid #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffed4e;
+} 
