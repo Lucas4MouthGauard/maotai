@@ -581,4 +581,48 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #ffed4e;
+}
+
+/* CA展示框样式 */
+.ca-box {
+    margin: 2rem auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 100vw;
+}
+.ca-label {
+    font-family: 'Press Start 2P', monospace;
+    color: #ffd700;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+.ca-display {
+    width: 420px;
+    max-width: 90vw;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.85rem;
+    padding: 0.7rem 1rem;
+    border: 2px solid #ffd700;
+    border-radius: 6px;
+    background: #222;
+    color: #fff;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    letter-spacing: 1px;
+    transition: border 0.2s;
+}
+.ca-display:focus {
+    border: 2px solid #00ff88;
+}
+
+@media (max-width: 600px) {
+    .ca-display {
+        width: 98vw;
+        font-size: 0.7rem;
+    }
+    .ca-label {
+        font-size: 0.8rem;
+    }
 } 
