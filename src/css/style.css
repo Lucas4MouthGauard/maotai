@@ -195,6 +195,7 @@ body {
     transition: all 0.3s ease;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
+    cursor: default;
 }
 
 .social-link.twitter {
