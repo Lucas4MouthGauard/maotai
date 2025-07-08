@@ -43,13 +43,10 @@ function initSmoothScroll() {
 // 分享功能
 function initShareFunction() {
     const shareBtn = document.getElementById('shareBtn');
-    const shareMessages = [
-        `A sip of tradition, a shot of speculation. $600519 让年轻人也能买得起茅台！\n关注 @maotai600519\n#MOUTAI #茅台 #Web3 #Meme \nmaotai.app`
-    ];
+    const shareText = `A sip of tradition, a shot of speculation. 中国茅台 让年轻人也能买得起茅台！\n关注 @ChineseMoutai\n#MOUTAI #茅台 #Web3 #Meme \nmaotai.app`;
     
     shareBtn.addEventListener('click', function() {
-        const randomMessage = shareMessages[Math.floor(Math.random() * shareMessages.length)];
-        const tweetText = encodeURIComponent(randomMessage);
+        const tweetText = encodeURIComponent(shareText);
         const twitterUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
         
         window.open(twitterUrl, '_blank', 'width=600,height=400');
